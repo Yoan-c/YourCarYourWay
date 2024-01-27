@@ -21,11 +21,13 @@
         </div>
         <div class="card__bottom">
             <div class="chat">
-                <input type="text" name="" id="" placeholder="Entrez votre message">
+                <input type="text" #message name="" id="" placeholder="Entrez votre message">
             </div>
-            <div class="sendBtn">
-                <button>Send</button>
+            <div class="send">
+            <div class="sendBtn" (click)="sendMessage(message.value)">
+                <span>Send</span>
             </div>
+        </div>
         </div>
     </div>
 </div>

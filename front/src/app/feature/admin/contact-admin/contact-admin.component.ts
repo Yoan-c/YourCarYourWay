@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ContactAdminComponent {
 
+  constructor(){}
+
+  sendMessage(msg :String){
+    console.log(`Message ${msg}`);
+    
+  }
 }
