@@ -1,0 +1,27 @@
+.card {
+    border : 1px solid green;
+    margin-top: 28px;
+    padding: 5px;
+    background-color: antiquewhite;
+    &__top{
+        background-color: white;
+        padding: 12px;
+        border-radius: 5px;
+    }
+
+    &__bottom {
+        background-color : white;
+        border-radius: 5px;
+    }
+
+    &__body {
+        margin: auto;
+        width: 80%;
+        padding: 5px;
+    }
+
+    &__message{
+        height: 400px;
+        overflow-y: scroll;
+    }
+}

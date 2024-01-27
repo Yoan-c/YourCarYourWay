@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 100px;
+
+    .right {
+        border : 1px solid black;
+        width: 400px;
+
+        &__info{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}

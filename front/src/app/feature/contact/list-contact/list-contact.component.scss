@@ -1,0 +1,12 @@
+.choice {
+    display: flex;
+    justify-content: center;
+
+    &__left{
+        margin-right: 20px;
+    }
+
+    &__left, &__right{
+        cursor: pointer;
+    }
+}

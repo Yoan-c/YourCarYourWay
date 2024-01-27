@@ -1,0 +1,16 @@
+<div class="choice">
+    <div class="choice__left">
+        <div (click)="updateChatInactive()">formualire</div>
+    </div>
+    <div class="choice__right">
+        <div (click)="updateChatActive()">chat en ligne</div>
+    </div>
+</div>
+
+<ng-container *ngIf="isChat; else formContact">
+    <app-chat></app-chat>
+</ng-container>
+<ng-template #formContact>
+    <app-form-contact></app-form-contact>
+</ng-template>
+
