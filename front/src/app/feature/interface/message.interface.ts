@@ -1,5 +1,5 @@
 export interface MessageChat {
     id? : number,
-    message? : String,
+    message? : string,
     date? : Date
 }

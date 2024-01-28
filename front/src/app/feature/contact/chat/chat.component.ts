@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageChat } from '../../interface/message.interface';
+import { ChatService } from '../service/chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -8,21 +9,26 @@ import { MessageChat } from '../../interface/message.interface';
 })
 export class ChatComponent implements OnInit {
 
-  tabChat : Array<MessageChat> = [];
+  messageList: Array<MessageChat> = [];
 
-  constructor(){}
+  constructor(private chatService: ChatService){}
 
   ngOnInit(): void {
-    this.tabChat.push({id : 1, message : 'bonjour', date : new Date() })
-    this.tabChat.push({id : 2, message : `Bonjour`, date : new Date() })
-    this.tabChat.push({id : 1, message : `J'ai un probleme pouvez vous m'aider`, date : new Date() })
-    this.tabChat.push({id : 2, message : `Oui biensur dites moi tout`, date : new Date() })
-    this.tabChat.push({id : 2, message : `Quel est votre soucis ?`, date : new Date() })
+    this.chatService.joinRoom("ABC");
+    this.lisenerMessage();
   }
 
-  sendMessage(msg : String){
-    console.log(`Message contact ${msg}`);
-    this.tabChat.push({id : 1, message : msg, date : new Date() })
-    console.log(this.tabChat);
+  sendMessage(msg : string){
+    let message: MessageChat  = {id : 1, message : msg, date : new Date()}
+    this.chatService.sendMessage('ABC', message)
+  }
+
+  lisenerMessage() {
+    this.chatService.getMessageSubject().subscribe((messages: Array<MessageChat>) => {
+      this.messageList = messages.map((messageChat: MessageChat) => ({
+        ...messageChat
+      }))
+      console.log(this.messageList);
+    });
   }
 }

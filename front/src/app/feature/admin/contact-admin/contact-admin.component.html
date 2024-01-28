@@ -2,28 +2,23 @@
     <div class="card__body">
         <div class="card__top">
             <div class="card__message">
-                <p>Bonjour</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
-                <p>J'ai un probleme</p>
+                <div class="message" *ngFor="let chat of messageList; index as i">
+                    <div class="client" *ngIf="messageList[i].id == 2">
+                        <span class="client__date">{{chat.date | date:'dd/MMM/yyyy HH:mm:ss'}}</span>
+                        <p class="client__message">{{chat.message}}</p>
+                    </div>
+                    <div class="service" *ngIf="messageList[i].id == 1">
+                        <span class="sevice__date">{{chat.date | date:'dd/MMM/yyyy HH:mm:ss'}}</span>
+                        <p class="service__message">{{chat.message}}</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card__bottom">
             <div class="chat">
                 <input type="text" #message name="" id="" placeholder="Entrez votre message">
             </div>
-            <div class="send">
+            <div class="sendMsg">
             <div class="sendBtn" (click)="sendMessage(message.value)">
                 <span>Send</span>
             </div>
@@ -31,4 +26,3 @@
         </div>
     </div>
 </div>
-
