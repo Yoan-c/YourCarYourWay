@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './list-contact.component.scss'
 })
 export class ListContactComponent {
-  isChat : boolean = true;
+  isChat : boolean = false;
 
   constructor(){}
 

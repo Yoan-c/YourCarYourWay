@@ -1,7 +1,27 @@
 .form {
+    position: relative;
+    margin-top : 40px;
+
     &__group {
         display: flex;
-        border : 1px solid red;
         margin: 5px;
     }
+}
+
+.label {
+    padding: 5px;
+}
+
+p.label {
+    margin: 0;
+    padding-top: 0;
+    width: 80px;
+}
+
+input, select {
+    height: 20px;
+}
+
+textarea {
+    resize: none;
 }

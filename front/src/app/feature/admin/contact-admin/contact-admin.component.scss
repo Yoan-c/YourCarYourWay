@@ -1,5 +1,4 @@
 .card {
-    border : 1px solid green;
     margin-top: 28px;
     padding: 5px;
     background-color: antiquewhite;
@@ -11,7 +10,9 @@
 
     &__bottom {
         background-color : white;
-        border-radius: 5px;
+        border-radius: 0 0 5px 5px;
+        padding: 10px;
+        border-top : 1px solid black;
     }
 
     &__body {
@@ -27,7 +28,6 @@
 }
 
 .message {
-    border : 1px solid blue;
     padding : 5px
 }
 
@@ -67,4 +67,17 @@
         margin: 0;
         overflow-wrap: break-word;
     }
+}
+
+.chat {
+    margin-bottom: 5px;
+}
+
+.sendBtn {
+    width: 60px;
+    background-color: rgb(3, 128, 15);
+    color : white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
 }

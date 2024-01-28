@@ -28,7 +28,6 @@ export class ChatComponent implements OnInit {
       this.messageList = messages.map((messageChat: MessageChat) => ({
         ...messageChat
       }))
-      console.log(this.messageList);
     });
   }
 }
