@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ChatService } from '../../contact/service/chat.service';
 import { MessageChat } from '../../interface/message.interface';
 
@@ -10,6 +10,7 @@ import { MessageChat } from '../../interface/message.interface';
 export class ContactAdminComponent implements OnInit {
   
   messageList: Array<MessageChat> = [];
+  @ViewChild('message') message: ElementRef<HTMLInputElement> | undefined;
 
   constructor(private chatService: ChatService){}
 
@@ -19,6 +20,7 @@ export class ContactAdminComponent implements OnInit {
   }
 
   sendMessage(msg : string){
+    this.message!.nativeElement.value = ""
     let message: MessageChat  = {id : 2, message : msg, date : new Date()}
     this.chatService.sendMessage('ABC', message)
   }
@@ -31,3 +33,4 @@ export class ContactAdminComponent implements OnInit {
     });
   }
 }
+
